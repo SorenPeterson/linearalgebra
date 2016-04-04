@@ -94,5 +94,5 @@ print
 
 print 'Angle'
 print Vector([3.183, -7.627]).angle(Vector([-2.668, 5.319]))
-print Vector([7.35, 0.221, 5.188]).angle(Vector([2.751, 8.259, 3.985]))
+print math.degrees(Vector([7.35, 0.221, 5.188]).angle(Vector([2.751, 8.259, 3.985])))
 print
