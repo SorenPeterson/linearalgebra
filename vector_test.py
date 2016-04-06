@@ -14,5 +14,25 @@ class TestVectorMethods(unittest.TestCase):
         scaled_vector = Vector([1.671, -1.012, -0.318]) * 7.41
         self.assertEqual(scaled_vector.round(3), Vector([12.382, -7.499, -2.356]))
 
+    def test_magnitude(self):
+        magnitude = Vector([-0.221, 7.437]).magnitude()
+        self.assertEqual(round(magnitude, 3), 7.44)
+        magnitude = Vector([8.813, -1.331, -6.247]).magnitude()
+        self.assertEqual(round(magnitude, 3), 10.884)
+
+    def test_magnitude_of_zero_vector(self):
+        zero_vector = Vector([0, 0, 0])
+        self.assertEqual(zero_vector.magnitude(), 0)
+
+    def test_direction(self):
+        direction = Vector([5.581, -2.136]).direction()
+        self.assertEqual(direction.round(3), Vector([0.934, -0.357]))
+        direction = Vector([1.996, 3.108, -4.554]).direction()
+        self.assertEqual(direction.round(3), Vector([0.340, 0.530, -0.777]))
+
+    def test_direction_of_zero_vector(self):
+        direction = Vector([0, 0, 0]).direction()
+        self.assertEqual(direction, None)
+
 if __name__ == '__main__':
     unittest.main()

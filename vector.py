@@ -66,6 +66,8 @@ class Vector(object):
         return math.sqrt(sum_of_squares)
 
     def direction(self):
+        if self.magnitude() == 0:
+            return None
         return self * (1 / self.magnitude())
 
     def angle(self, v):
