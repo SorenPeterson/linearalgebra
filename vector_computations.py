@@ -1,24 +1,16 @@
-import unittest
 from vector import Vector
-
-class TestVectorMethods(unittest.TestCase):
-    def test_addition(self):
-        sum_vector = Vector([8.218, -9.341]) + Vector([-1.129, 2.111])
-        self.assertEqual(sum_vector.round, Vector([7.089, -7.23]))
-
-if __name__ == '__main__':
-    unittest.main()
+import math
 
 print 'Addition'
-print (Vector([8.218, -9.341]) + Vector([-1.129, 2.111])).round()
+print (Vector([8.218, -9.341]) + Vector([-1.129, 2.111])).round(3)
 print
 
 print 'Subtraction'
-print (Vector([7.119, 8.215]) - Vector([-8.223, 0.878])).round()
+print (Vector([7.119, 8.215]) - Vector([-8.223, 0.878])).round(3)
 print
 
 print 'Scalar Multiplication'
-print (Vector([1.671, -1.012, -0.318]) * 7.41).round()
+print (Vector([1.671, -1.012, -0.318]) * 7.41).round(3)
 print
 
 print 'Magnitude'

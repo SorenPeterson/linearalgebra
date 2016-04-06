@@ -53,6 +53,12 @@ class Vector(object):
             new += [coordinate * scalar]
         return Vector(new)
 
+    def round(self, places):
+        new = []
+        for coordinate in self.coordinates:
+            new += [round(coordinate, places)]
+        return Vector(new)
+
     def magnitude(self):
         sum_of_squares = 0
         for coordinate in self.coordinates:
