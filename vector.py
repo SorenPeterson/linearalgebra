@@ -71,4 +71,7 @@ class Vector(object):
         return self * (1 / self.magnitude())
 
     def angle(self, v):
-        return math.acos(self * v / (self.magnitude() * v.magnitude()))
+        multiplied_magnitudes = self.magnitude() * v.magnitude()
+        if(multiplied_magnitudes == 0):
+            return None
+        return math.acos(self * v / multiplied_magnitudes)

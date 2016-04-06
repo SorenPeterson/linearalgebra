@@ -44,6 +44,10 @@ class TestVectorMethods(unittest.TestCase):
         self.assertEqual(round(angle, 3), 3.072)
         angle = Vector([7.35, 0.221, 5.188]).angle(Vector([2.751, 8.259, 3.985]))
         self.assertEqual(round(math.degrees(angle), 3), 60.276)
+        angle = Vector([7.35, 0.221, 5.188]).angle(Vector([0, 0, 0]))
+        self.assertEqual(angle, None)
+        angle = Vector([0, 0, 0]).angle(Vector([7.35, 0.221, 5.188]))
+        self.assertEqual(angle, None)
 
 if __name__ == '__main__':
     unittest.main()
