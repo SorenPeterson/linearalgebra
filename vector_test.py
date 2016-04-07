@@ -49,5 +49,16 @@ class TestVectorMethods(unittest.TestCase):
         angle = Vector([0, 0, 0]).angle(Vector([7.35, 0.221, 5.188]))
         self.assertEqual(angle, None)
 
+    def test_parallel(self):
+        is_parallel = Vector([0, 0, 0]).parallel(Vector([1, 2, 3]))
+        self.assertEqual(is_parallel, True)
+        is_parallel = Vector([1, 2, 3]).parallel(Vector([0, 0, 0]))
+        self.assertEqual(is_parallel, True)
+        is_parallel = Vector([1, 2, 3]).parallel(Vector([-1, -2, -3]))
+        self.assertEqual(is_parallel, True)
+
+    def test_orthogonal(self):
+        pass
+
 if __name__ == '__main__':
     unittest.main()

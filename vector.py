@@ -75,3 +75,8 @@ class Vector(object):
         if(multiplied_magnitudes == 0):
             return None
         return math.acos(self * v / multiplied_magnitudes)
+
+    def parallel(self, v):
+        if(self.magnitude() * v.magnitude() == 0):
+            return True
+        return self.direction() == v.direction() or self.direction() == v.direction() * -1
