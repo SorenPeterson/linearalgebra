@@ -20,7 +20,7 @@ class Vector(object):
 
 
     def __eq__(self, v):
-        return self.coordinates == v.coordinates
+        return self.round(3).coordinates == v.round(3).coordinates
 
     def __add__(self, v):
         new = []
