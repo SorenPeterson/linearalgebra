@@ -32,3 +32,19 @@ print 'Angle'
 print Vector([3.183, -7.627]).angle(Vector([-2.668, 5.319]))
 print math.degrees(Vector([7.35, 0.221, 5.188]).angle(Vector([2.751, 8.259, 3.985])))
 print
+
+vectors = [
+    [Vector([-7.579, -7.88]), Vector([22.737, 23.64])],
+    [Vector([-2.029, 9.97, 4.172]), Vector([-9.231, -6.639, -7.245])],
+    [Vector([-2.328, -7.284, -1.214]), Vector([-1.821, 1.072, -2.94])],
+    [Vector([2.118, 4.827]), Vector([0, 0])]
+]
+
+print "Parallel"
+for first, second in vectors:
+    print first.parallel(second)
+print
+
+print "Orthogonal"
+for first, second in vectors:
+    print first.orthogonal(second)

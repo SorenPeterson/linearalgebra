@@ -80,3 +80,6 @@ class Vector(object):
         if(self.magnitude() * v.magnitude() == 0):
             return True
         return self.direction() == v.direction() or self.direction() == v.direction() * -1
+
+    def orthogonal(self, v):
+        return self * v == 0

@@ -56,9 +56,18 @@ class TestVectorMethods(unittest.TestCase):
         self.assertEqual(is_parallel, True)
         is_parallel = Vector([1, 2, 3]).parallel(Vector([-1, -2, -3]))
         self.assertEqual(is_parallel, True)
+        is_parallel = Vector([1, 2, 3]).parallel(Vector([1, 2, 4]))
+        self.assertEqual(is_parallel, False)
 
     def test_orthogonal(self):
-        pass
+        is_orthogonal = Vector([0, 0, 0]).orthogonal(Vector([0, 0, 0]))
+        self.assertEqual(is_orthogonal, True)
+        is_orthogonal = Vector([1, 2, 3]).orthogonal(Vector([0, 0, 0]))
+        self.assertEqual(is_orthogonal, True)
+        is_orthogonal = Vector([0, 0, 0]).orthogonal(Vector([1, 2, 3]))
+        self.assertEqual(is_orthogonal, True)
+        is_orthogonal = Vector([5, -1, -1]).orthogonal(Vector([1, 2, 3]))
+        self.assertEqual(is_orthogonal, True)
 
 if __name__ == '__main__':
     unittest.main()
