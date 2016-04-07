@@ -83,3 +83,6 @@ class Vector(object):
 
     def orthogonal(self, v):
         return round(self * v, 3) == 0
+
+    def projection(self, v):
+        return self.direction() * (self.direction() * v)

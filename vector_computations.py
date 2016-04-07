@@ -52,13 +52,13 @@ print
 
 print "Projection"
 print "  - parallel"
-print Vector([3.039, 1.879]).projection(Vector([0.825, 2.036]))
+print Vector([0.825, 2.036]).projection(Vector([3.039, 1.879])).round(3)
 print "  - orthogonal"
 v = Vector([-9.88, -3.264, -8.159])
 b = Vector([-2.155, -9.353, -9.473])
-print v - v.projection(b)
+print (v - b.projection(v)).round(3)
 print "  - full composition"
 v = Vector([3.009, -6.172, 3.692, -2.51])
 b = Vector([6.404, -9.144, 2.759, -9.473])
-print v.projection(b)
-print v - v.projection(b)
+print b.projection(v).round(3)
+print (v - b.projection(v)).round(3)
