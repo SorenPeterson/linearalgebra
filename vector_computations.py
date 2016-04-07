@@ -59,6 +59,6 @@ b = Vector([-2.155, -9.353, -9.473])
 print (v - b.projection(v)).round(3)
 print "  - full composition"
 v = Vector([3.009, -6.172, 3.692, -2.51])
-b = Vector([6.404, -9.144, 2.759, -9.473])
+b = Vector([6.404, -9.144, 2.759, 8.718])
 print b.projection(v).round(3)
 print (v - b.projection(v)).round(3)
