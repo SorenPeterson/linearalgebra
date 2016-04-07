@@ -82,4 +82,4 @@ class Vector(object):
         return self.direction() == v.direction() or self.direction() == v.direction() * -1
 
     def orthogonal(self, v):
-        return self * v == 0
+        return round(self * v, 3) == 0
