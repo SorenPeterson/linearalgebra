@@ -77,5 +77,11 @@ class TestVectorMethods(unittest.TestCase):
         v_component_orthogonal_to_b = v - b.projection(v)
         self.assertEqual(v_component_orthogonal_to_b, Vector([1.04, -3.361, 2.844, -5.19]))
 
+    def test_cross_product(self):
+        v = Vector([8.462, 7.893, -8.187])
+        w = Vector([6.984, -5.975, 4.778])
+        cross_product = v.cross(w)
+        self.assertEqual(cross_product.round(3), Vector([-11.205, -97.609, -105.685]))
+
 if __name__ == '__main__':
     unittest.main()
