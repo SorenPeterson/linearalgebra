@@ -69,5 +69,13 @@ class TestVectorMethods(unittest.TestCase):
         is_orthogonal = Vector([5, -1, -1]).orthogonal(Vector([1, 2, 3]))
         self.assertEqual(is_orthogonal, True)
 
+    def test_projection(self):
+        v = Vector([3.009, -6.172, 3.692, -2.51])
+        b = Vector([6.404, -9.144, 2.759, 8.718])
+        v_component_parallel_to_b = b.projection(v)
+        self.assertEqual(v_component_parallel_to_b, Vector([1.969, -2.811, 0.848, 2.68]))
+        v_component_orthogonal_to_b = v - b.projection(v)
+        self.assertEqual(v_component_orthogonal_to_b, Vector([1.04, -3.361, 2.844, -5.19]))
+
 if __name__ == '__main__':
     unittest.main()
