@@ -34,24 +34,17 @@ class Vector(object):
             new += [pair[0] - pair[1]]
         return Vector(new)
 
-    def __mul__(self, multiple):
-        case = type(multiple)
-        if case == Vector:
-            return self.__dot_product(multiple)
-        else:
-            return self.__scalar_product(multiple)
-
-    def __dot_product(self, v):
-        sum_of_products = 0
-        for pair in zip(*[self.coordinates, v.coordinates]):
-            sum_of_products += pair[0] * pair[1]
-        return sum_of_products
-
-    def __scalar_product(self, scalar):
+    def __mul__(self, scalar):
         new = []
         for coordinate in self.coordinates:
             new += [coordinate * scalar]
         return Vector(new)
+
+    def dot(self, v):
+        sum_of_products = 0
+        for pair in zip(*[self.coordinates, v.coordinates]):
+            sum_of_products += pair[0] * pair[1]
+        return sum_of_products
 
     def round(self, places):
         new = []
@@ -74,7 +67,7 @@ class Vector(object):
         multiplied_magnitudes = self.magnitude() * v.magnitude()
         if(multiplied_magnitudes == 0):
             return None
-        return math.acos(self * v / multiplied_magnitudes)
+        return math.acos(self.dot(v) / multiplied_magnitudes)
 
     def parallel(self, v):
         if(self.magnitude() * v.magnitude() == 0):
@@ -82,7 +75,7 @@ class Vector(object):
         return self.direction() == v.direction() or self.direction() == v.direction() * -1
 
     def orthogonal(self, v):
-        return round(self * v, 3) == 0
+        return round(self.dot(v), 3) == 0
 
     def projection(self, v):
-        return self.direction() * (self.direction() * v)
+        return self.direction() * (self.direction().dot(v))

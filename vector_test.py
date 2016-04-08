@@ -32,11 +32,11 @@ class TestVectorMethods(unittest.TestCase):
         self.assertEqual(direction, None)
 
     def test_dot_product(self):
-        dot_product = Vector([7.887, 4.138]) * Vector([-8.802, 6.776])
+        dot_product = Vector([7.887, 4.138]).dot(Vector([-8.802, 6.776]))
         self.assertEqual(round(dot_product, 3), -41.382)
-        dot_product = Vector([-5.955, -4.904, -1.874]) * Vector([-4.496, -8.755, 7.103])
+        dot_product = Vector([-5.955, -4.904, -1.874]).dot(Vector([-4.496, -8.755, 7.103]))
         self.assertEqual(round(dot_product, 3), 56.397)
-        dot_product = Vector([0, 0, 0]) * Vector([-5.955, -4.904, -1.874])
+        dot_product = Vector([0, 0, 0]).dot(Vector([-5.955, -4.904, -1.874]))
         self.assertEqual(dot_product, 0)
 
     def test_angle(self):

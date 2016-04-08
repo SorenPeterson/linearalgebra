@@ -24,8 +24,8 @@ print Vector([1.996, 3.108, -4.554]).direction()
 print
 
 print 'Dot Product'
-print Vector([7.887, 4.138]) * Vector([-8.802, 6.776])
-print Vector([-5.955, -4.904, -1.874]) * Vector([-4.496, -8.755, 7.103])
+print Vector([7.887, 4.138]).dot(Vector([-8.802, 6.776]))
+print Vector([-5.955, -4.904, -1.874]).dot(Vector([-4.496, -8.755, 7.103]))
 print
 
 print 'Angle'
