@@ -62,3 +62,16 @@ v = Vector([3.009, -6.172, 3.692, -2.51])
 b = Vector([6.404, -9.144, 2.759, 8.718])
 print b.projection(v).round(3)
 print (v - b.projection(v)).round(3)
+print
+
+print "Cross Product"
+print Vector([8.462, 7.893, -8.187]).cross(Vector([6.984, -5.975, 4.778])).round(3)
+print
+
+print "Area of Parallelogram"
+print round(Vector([-8.987, -9.838, 5.031]).cross(Vector([-4.268, -1.861, -8.866])).magnitude(), 3)
+print
+
+print "Area of Triangle"
+print round(Vector([1.5, 9.547, 3.691]).cross(Vector([-6.007, 0.124, 5.772])).magnitude() / 2, 3)
+print

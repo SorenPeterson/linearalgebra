@@ -46,6 +46,17 @@ class Vector(object):
             sum_of_products += pair[0] * pair[1]
         return sum_of_products
 
+    def cross(self, v):
+        if(len(self.coordinates) != 3 or len(v.coordinates) != 3):
+            return None
+        a, b, c = self.coordinates
+        x, y, z = v.coordinates
+        return Vector([
+            b * z - c * y,
+            c * x - a * z,
+            a * y - x * b
+        ])
+
     def round(self, places):
         new = []
         for coordinate in self.coordinates:
